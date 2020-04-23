@@ -1,0 +1,175 @@
+<doctype !html>
+		  <head>
+			<title>MODAL TABLE
+			</title>
+			  
+		  <meta charset="utf-8">
+		        <meta name="viewport" content="width=device-width, initial-scale=1">
+		        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+		        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+		        <!--javascript link-->
+
+		  </head>
+		  
+		  	<style>
+.deletebutton {
+  font-weight: bold;
+  border: 1px solid red;
+  border-radius: 2px;
+  font-size: 12px;
+  padding: 2px;
+  cursor: pointer
+}
+.editbutton {
+  font-weight: bold;
+  border: 1px solid red;
+  border-radius: 2px;
+  font-size: 12px;
+  padding: 2px;
+  cursor: pointer
+}
+
+
+</style>
+
+		  <body>
+		  	
+<div class="container">
+  <table class="table table-striped table-bordered table-hover table-condensed" id="table1" >
+    <tr> 
+      <th class="thead-light">No </th>
+<th class="thead-light">book Name</th>
+<th class="thead-light">Course level</th>
+<th class="thead-light">Action</th>
+</table>
+ 
+
+  <!---large modal--->
+<div class="container">
+
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">click to fill the form</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+         <h1 class="modal-title" text align=center>Fill the below form</h1>
+        </div>
+        <div class="modal-body" text align=center>
+	<label>No
+				<input type="number"  id="count"></label>
+			    <div></div>
+			    <label>Bookname
+			<input type="text" id="book"></label>
+		   <div ></div>
+		   <label>course level
+		<input type="text" id="course"></label>
+	<div></div>
+	        </div>
+        <div class="modal-footer" text align="center">
+          <button class="btn btn-default" data-dismiss="modal">Close</button>
+           <button class="btn btn-default" id="btn2">Save</button>
+          <button class="btn btn-default" id="btn1">Submit</button>
+        </div>    
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+    
+	$("#btn1").click(function(){
+		var Count=$("#count").val();
+         var Book=$("#book").val();
+         var Course=$("#course").val();
+
+    $("#table1").append("<tr><td>"+Count+"</td><td>"+Book+"</td><td>"+Course+"</td><td> <span class='deletebutton'>Delete row </span> <span class='editbutton'>Edit row</span>"+"</td></tr>");      
+	});
+
+
+	$("#table1").on("click", ".deletebutton", function() {
+   $(this).closest("tr").remove();
+});
+
+      
+$("#table1").on("click", ".editbutton", function() {
+
+      	$('#myModal').modal('show');
+
+     $("Count").val($(this).closest('tr').find('td.Count').text().val());
+
+        $("Book").val($(this).closest('tr').find('td.Book').text());
+
+      $ var newcourse =$("Course").val($(this).closest('tr').find('td.Course').text());
+        
+	$("#btn2").click(function(){
+    $ newcourse.replacewith("course");
+
+           
+          
+           });
+       //  });
+
+  //
+   // $ ("#count").val().replace( ("Count").val($(this).closest('tr').find('td.Count').text()));  	  
+            
+                          //   $(function () {
+  //$("#table1").on("click", ".editbutton", function() {
+        
+    //$("#table1 td").click(function (e) {
+      //  e.preventDefault(); // <-- consume event
+       /// e.stopImmediatePropagation();
+        
+        //$this = $(this);
+
+        //if ($this.data('editing')) return;  
+        
+       // var val = $this.text();
+        
+        //$this.empty()
+        //$this.data('editing', true);        
+        
+        //$('<input type="text" class="editfield">').val(val).appendTo($this);
+   // });
+
+   // putOldValueBack = function () {
+        //$("#table1 .editfield").each(function(){
+         //   $this = $(this);
+          //  var val = $this.val();
+           // var td = $this.closest('td');
+            //td.empty().html(val).data('editing', false);
+            
+      //  });
+   // }
+
+   // $(document).click(function (e) {
+    //    putOldValueBack();
+  //  });
+//});
+          // $("Count").val($(this).closest('tr').find('td.Count').text());
+       // $("#table1").on('click', '.editbutton', function(event) {
+        
+       
+	//event.preventDefault(); 
+
+	//if($(this).attr('edit_type') == 'button')
+	//{
+		//return false; 
+//	}
+	//make div editable
+	//$(this).closest('count').attr('#tabale1', 'true');
+	//add bg css
+	//$(this).addClass('bg-warning').css('padding','5px');
+
+	//$(this).focus();
+//};
+
+   
+		</script>
+			
+		  </body>
